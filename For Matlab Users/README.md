@@ -1,0 +1,1 @@
+These files are for those of you using Matlab, since using OpenCV with Matlab is not trivial. Even if you are using Matlab, you still need to have Python installed in your machine, as well as the required libraries.
