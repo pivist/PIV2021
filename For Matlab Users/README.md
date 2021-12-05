@@ -12,7 +12,7 @@ You also need to install some Python packages: Numpy, OpenCV and OpenCV contrib 
 ## Running Python scripts inside Matlab
 Once everything is configured, you should be able to run Python scripts in Matlab using something like
 
-`output = py.getCorners.run('img_path')`
+`output = py.getCorners.run('img_name.png')`
 
 See [this link](https://www.mathworks.com/help/matlab/matlab_external/call-user-defined-custom-module.html) for more information.
 
