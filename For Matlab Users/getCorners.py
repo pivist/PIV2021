@@ -8,7 +8,6 @@ import sys
 import numpy as np
 import cv2
 from cv2 import aruco as aruco
-#from scipy.io import savemat
 import argparse
 
 def initArucoPos(template, aruco_dict, arucoParameters):
@@ -45,14 +44,5 @@ def run(img_path):
     corners, ids = initArucoPos(img_template, dict4_7by7, arucoParameters)
 
     dict = {"corners": corners, "ids": ids}
-    #savemat("cornersIds.mat", dict)
-    return dict
-    
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Receives an image with some Aruco markers and outputs their \
-                                                  coordinates and ids.')
-    parser.add_argument('img', metavar='image_path',
-                        help='Path to image, with extension (.png, .jpg, ...)')
 
-    args = parser.parse_args()
-    return run(args.img)
+    return dict
