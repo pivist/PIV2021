@@ -1,5 +1,8 @@
 These files are for those of you using Matlab, since using OpenCV with Matlab is not trivial. Even if you are using Matlab, you still need to have Python installed in your machine, as well as the required packages.
 
+### Important
+For **Task 1** of the project you'll only need `getCorners.py`
+
 ## Installing Python
 If you aren't sure on how to install Python, you can follow [this tutorial](https://www.mathworks.com/help/matlab/matlab_external/install-supported-python-implementation.html).
 Make sure that you installed the Python version you install is supported by your Matlab version (more information on this in the previous link). The scripts in this folder were developed in Python 3.7 so you should install Python 3.7 or similar.
