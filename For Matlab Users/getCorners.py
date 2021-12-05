@@ -8,7 +8,7 @@ import sys
 import numpy as np
 import cv2
 from cv2 import aruco as aruco
-from scipy.io import savemat
+#from scipy.io import savemat
 import argparse
 
 def initArucoPos(template, aruco_dict, arucoParameters):
