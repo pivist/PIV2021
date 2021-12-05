@@ -1,5 +1,4 @@
-# PIV2021
-## Repository for useful resources for PIV projects 
+## PIV2021 - Repository for useful resources for PIV projects 
 
 In folder **Aruco Markers** you'll find a pdf file with some notes on what Aruco markers are and how to use them.
 
