@@ -1,5 +1,5 @@
 """
-This script receives an image as input and outputs a .mat file with the Aruco markers' coordinates (in pixels)
+This script receives an image as input and returns a dictionary with the Aruco markers' coordinates (in pixels)
 and ids. The order of the coordinates is the same as the order of the ids. Example: if ids[0] has value 2 then
 corners[0] has corners of Aruco marker with id=2.
 """
