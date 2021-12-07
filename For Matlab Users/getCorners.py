@@ -1,5 +1,5 @@
 """
-This script receives an image as input and returns a dictionary with the Aruco markers' coordinates (in pixels)
+This script receives an image as input and returns nothing but saves a .mat file with the Aruco markers' coordinates (in pixels)
 and ids. The order of the coordinates is the same as the order of the ids. Example: if ids[0] has value 2 then
 corners[0] has corners of Aruco marker with id=2.
 """
@@ -8,6 +8,7 @@ import sys
 import numpy as np
 import cv2
 from cv2 import aruco as aruco
+from scipy.io import savemat
 import argparse
 
 def initArucoPos(template, aruco_dict, arucoParameters):
@@ -22,10 +23,10 @@ def initArucoPos(template, aruco_dict, arucoParameters):
     corners, ids, rejectedImgPoints = aruco.detectMarkers(gray_template, aruco_dict, parameters=arucoParameters)
 
     if len(corners) == 0:
-        print("Could not detect Aruco markers. Exiting.")
+        print("getCorners: Could not detect Aruco markers. Exiting.")
         exit(0)
 
-    print("Detected {} Aruco markers.".format(np.size(corners,0)))
+    print("getCorners: Detected {} Aruco markers.".format(np.size(corners,0)))
 
     return corners, ids
 
@@ -34,7 +35,7 @@ def run(img_path):
     
     img_template = cv2.imread(img_path)
     if img_template is None:
-        print("Unable to read the template.")
+        print("getCorners: Unable to read the template.")
         exit(-1)
 
     #The arucos in the template must be the ones in this dictionary
@@ -44,5 +45,6 @@ def run(img_path):
     corners, ids = initArucoPos(img_template, dict4_7by7, arucoParameters)
 
     dict = {"corners": corners, "ids": ids}
+    savemat("cornersIds.mat", dict)
 
-    return dict
+    return
